@@ -1,0 +1,50 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int main()
+
+{
+srand( time( NULL ) );
+int liczba;
+liczba = ((rand() % 1000 ) + 1 );
+int liczba2;
+bool blad;
+blad = cin.fail();
+int ile;
+int pozycja = 1;
+
+cout << "Sprobuj trafic liczbe z zakresu od 1 do 1000, ktora wylosowal komputer.." << endl;
+cout << "Liczy sie ilosc prob.. Wygrywa ten ktory trafi liczbe przy najmniejszej liczbie prob :)" << endl;
+cout << "Program wylosowal liczbe..." << endl;
+
+do
+{
+        do
+        {
+        cout << "Podaj liczbe: " << endl;
+        cin >> liczba2;
+        std::cin.clear();
+        std::cin.sync();
+
+        if (liczba2 == blad || liczba2 > 1001 || liczba2 < 0)
+                cout << "Podales nieprawidlowa wartosc" << endl;
+        } while (liczba2 == 0 || liczba2 > 1001 || liczba2 < 0);
+
+
+if (liczba == liczba2 && ile > 0)
+    cout << "Brawo!! Zgadles liczbe! Twoja liczba to: " << liczba << " Ilosc prob: " << pozycja << endl;
+    ile--;
+    pozycja++;
+    if (liczba2 > liczba && ile > 0)
+    cout << "Liczba ktora podales jest za duza. Spruboj ponownie." << endl;
+    ile--;
+
+        if (liczba2 < liczba && liczba2 != 0 && ile > 0)
+            cout << "Liczba ktora podales jest za mala. Spruboj ponownie" << endl;
+            ile--;
+
+} while (liczba2 != 0 && liczba2 != liczba && ile > 0);
+
+return 0;
+}
